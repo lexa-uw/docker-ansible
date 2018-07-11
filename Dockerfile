@@ -5,5 +5,7 @@ MAINTAINER Alexey Tishkov <odin450@gmail.com>
 RUN apk update && apk add git openssh sshpass
 
 RUN pip install --upgrade pip
-RUN pip install ansible==2.6.0
+RUN pip install ansible==2.6.1
 RUN pip install docker boto boto3
+
+WORKDIR /app
