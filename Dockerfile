@@ -1,19 +1,19 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 MAINTAINER Alexey Tishkov <odin450@gmail.com>
 
-ENV ANSIBLE_VERSION=2.7.6
+ENV ANSIBLE_VERSION=2.7.7
 
 RUN set -xe \
     && echo "****** Install system dependencies ******" \
-    && apk add --no-cache --progress python py-pip openssl \
+    && apk add --no-cache --progress python3 openssl \
 		ca-certificates git openssh sshpass \
 	&& apk --update add --virtual build-dependencies \
-		python-dev libffi-dev openssl-dev build-base \
+		python3-dev libffi-dev openssl-dev build-base \
 	\
 	&& echo "****** Install ansible and python dependencies ******" \
-    && pip install --upgrade pip \
-	&& pip install ansible==${ANSIBLE_VERSION} boto boto3 \
+    && pip3 install --upgrade pip \
+	&& pip3 install ansible==${ANSIBLE_VERSION} boto3 \
     \
     && echo "****** Remove unused system librabies ******" \
 	&& apk del build-dependencies \
