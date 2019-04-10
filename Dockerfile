@@ -2,7 +2,7 @@ FROM alpine:3.9
 
 MAINTAINER Alexey Tishkov <odin450@gmail.com>
 
-ENV ANSIBLE_VERSION=2.7.8
+ENV ANSIBLE_VERSION=2.7.9
 
 RUN set -xe \
     && echo "****** Install system dependencies ******" \
