@@ -1,12 +1,12 @@
-FROM alpine:3.10
+FROM alpine:3.16.2
 
 MAINTAINER Alexey Tishkov <odin450@gmail.com>
 
-ENV ANSIBLE_VERSION=2.9.2
+ENV ANSIBLE_VERSION=6.3.0
 
 RUN set -xe \
     && echo "****** Install system dependencies ******" \
-    && apk add --no-cache --progress python3 openssl \
+    && apk add --no-cache --progress python3 py3-pip openssl \
 		ca-certificates git openssh sshpass \
 	&& apk --update add --virtual build-dependencies \
 		python3-dev libffi-dev openssl-dev build-base \
